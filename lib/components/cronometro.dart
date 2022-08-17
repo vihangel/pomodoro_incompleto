@@ -34,33 +34,24 @@ class Cronometro extends StatelessWidget {
           const SizedBox(height: 20),
           Observer(
             builder: (_) => Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text("${store.iniciado}"),
                 if (store.iniciado == 0)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: CronometroBotao(
-                      texto: "Iniciar",
-                      icone: Icons.play_arrow,
-                      click: store.iniciar,
-                    ),
+                  CronometroBotao(
+                    texto: "Iniciar",
+                    icone: Icons.play_arrow,
+                    click: store.iniciar,
                   ),
                 if (store.iniciado == 1)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: CronometroBotao(
-                      texto: "Parar",
-                      icone: Icons.stop,
-                      click: store.parar,
-                    ),
+                  CronometroBotao(
+                    texto: "Parar",
+                    icone: Icons.stop,
+                    click: store.parar,
                   ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: CronometroBotao(
-                    texto: "Reiniciar",
-                    icone: Icons.refresh,
-                  ),
+                CronometroBotao(
+                  texto: "Reiniciar",
+                  icone: Icons.refresh,
                 ),
               ],
             ),
